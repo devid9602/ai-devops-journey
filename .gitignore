@@ -1,0 +1,14 @@
+node_modules/
+cdk.out/
+cdk.context.json
+cdk-outputs*.json
+*.js
+!jest.config.js
+!app/src/*.js
+!app/test/*.js
+*.d.ts
+coverage/
+.DS_Store
+.env
+.env.*
+*.pem

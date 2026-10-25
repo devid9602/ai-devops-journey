@@ -1,0 +1,28 @@
+{
+  "name": "ecs-fargate-platform",
+  "version": "1.0.0",
+  "description": "Production-style AWS ECS Fargate platform in CDK (TypeScript): ALB, autoscaling, Spot mix, Firehose to Datadog logging, OIDC-based GitHub Actions deploys",
+  "private": true,
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc --noEmit",
+    "test": "jest",
+    "synth:dev": "cdk synth -c env=dev --quiet",
+    "synth:prod": "cdk synth -c env=prod --quiet",
+    "diff:dev": "cdk diff --all -c env=dev",
+    "deploy:dev": "cdk deploy --all -c env=dev --require-approval never"
+  },
+  "devDependencies": {
+    "@types/jest": "^29.5.14",
+    "@types/node": "^22.10.0",
+    "aws-cdk": "^2.1000.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "ts-node": "^10.9.2",
+    "typescript": "~5.6.3"
+  },
+  "dependencies": {
+    "aws-cdk-lib": "^2.200.0",
+    "constructs": "^10.4.2"
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "sample-api",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Deliberately tiny, dependency-free HTTP service. The infrastructure is the showcase.",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "test": "node --test \"test/*.test.js\""
+  },
+  "engines": { "node": ">=22" }
+}

@@ -1,0 +1,28 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main]
+    paths-ignore: ['**.md', 'docs/**']
+  workflow_dispatch:
+
+permissions:
+  id-token: write
+  contents: read
+
+# Never run two deploys against the same stacks at once; queue instead of cancelling a deploy mid-flight.
+concurrency:
+  group: deploy
+  cancel-in-progress: false
+
+jobs:
+  dev:
+    uses: ./.github/workflows/_deploy.yml
+    with:
+      environment: dev
+
+  prod:
+    needs: dev
+    uses: ./.github/workflows/_deploy.yml
+    with:
+      environment: prod
