@@ -1,4 +1,4 @@
-# ecs-fargate-platform
+# AI DevOps Journey: ECS Fargate Platform
 
 [![CI](https://github.com/devid9602/ecs-fargate-platform/actions/workflows/ci.yml/badge.svg)](https://github.com/devid9602/ecs-fargate-platform/actions/workflows/ci.yml)
 ![AWS CDK](https://img.shields.io/badge/AWS%20CDK-TypeScript-orange)
