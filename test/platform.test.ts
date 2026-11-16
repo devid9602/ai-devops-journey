@@ -89,12 +89,15 @@ describe('service', () => {
 
   test('prod ALB has deletion protection and access logging', () => {
     const { service } = build('prod');
-    service.hasResourceProperties('AWS::ElasticLoadBalancingV2::LoadBalancer', {
-      LoadBalancerAttributes: Match.arrayWith([
-        { Key: 'deletion_protection.enabled', Value: 'true' },
-        { Key: 'access_logs.s3.enabled', Value: 'true' },
-        { Key: 'routing.http.drop_invalid_header_fields.enabled', Value: 'true' },
-      ]),
+    const resourceType = 'AWS::ElasticLoadBalancingV2::LoadBalancer';
+    service.hasResourceProperties(resourceType, {
+      LoadBalancerAttributes: Match.arrayWith([{ Key: 'deletion_protection.enabled', Value: 'true' }]),
+    });
+    service.hasResourceProperties(resourceType, {
+      LoadBalancerAttributes: Match.arrayWith([{ Key: 'access_logs.s3.enabled', Value: 'true' }]),
+    });
+    service.hasResourceProperties(resourceType, {
+      LoadBalancerAttributes: Match.arrayWith([{ Key: 'routing.http.drop_invalid_header_fields.enabled', Value: 'true' }]),
     });
   });
 
