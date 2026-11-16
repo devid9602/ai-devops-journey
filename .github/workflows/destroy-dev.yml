@@ -13,9 +13,9 @@ permissions:
 
 jobs:
   destroy:
-    if: inputs.confirm == 'destroy'
+    if: inputs.confirm == 'destroy' && github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
-    environment: dev
+    environment: dev-destroy
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
