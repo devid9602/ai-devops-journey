@@ -24,7 +24,7 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 22
-      - uses: docker/setup-qemu-action@v3 # ARM64 image build on an x86 runner
+      - uses: docker/setup-qemu-action@v4 # ARM64 image build on an x86 runner
       - name: Install
         run: |
           if [ -f package-lock.json ]; then npm ci; else npm install --no-audit --no-fund; fi
