@@ -51,7 +51,7 @@ jobs:
       - name: Synthesize
         run: npx cdk synth -c env=${{ matrix.env }} --quiet
       - name: IaC misconfiguration scan (report-only until findings are triaged)
-        uses: aquasecurity/trivy-action@0.28.0
+        uses: aquasecurity/trivy-action@v0.36.0
         with:
           scan-type: config
           scan-ref: cdk.out
